@@ -38,46 +38,25 @@ We will use Python as the programming language for this course. Python is a very
 ### Install Python
 To install Python, follow the instructions on the [official website](https://www.python.org/).
 
-### Deal with different Python Environments
-Install pyenv
-```bash
- curl https://pyenv.run | bash
-```
+## How to use UV
+We will use UV to manage the dependencies of the project. UV is a tool for dependency management and packaging in Python. It allows you to declare the dependencies of your project in a simple and declarative way, and it will automatically install the dependencies for you.
+Why? Because it is 10-100x faster than pip and includes all the tools you need to manage your Python project.
 
-Add it to your bash 
-```bash
- export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-```
-
-Install needed version, eg. 3.12
-```bash
-pyenv install 3.12
-cd /path/to/your/project
-pyenv local 3.12
-poetry env use $(pyenv which python)
-poetry install
-```
-
-## How to use Poetry
-We will use Poetry to manage the dependencies of the project. Poetry is a tool for dependency management and packaging in Python. It allows you to declare the dependencies of your project in a simple and declarative way, and it will automatically install the dependencies for you.
-
-### Install Poetry
-To install Poetry, follow the instructions on the [official website](https://python-poetry.org/).
+### Install UV
+To install UV, follow the instructions of your local OS
 
 ### Install the dependencies
 To install the dependencies of the project, run the following command in the terminal or the command prompt:
 
 ```bash
-poetry install
+uv sync
 ```
-### From poetry to pip
+### From uv to pip
 If you want to use pip instead of poetry, you can run the following command in the terminal or the command prompt:
 
 ```bash
-poetry export -f requirements.txt --output requirements.txt --without-hashes
-pip install -r requirements.txt
+uv export --output-file requirements.txt
+uv pip install -r requirements.txt
 ```
 
 ## How to use Jupyter Notebooks
