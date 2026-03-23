@@ -21,6 +21,15 @@ dependencies = [
     "seaborn>=0.13.2,<0.14",
     "poetry-plugin-export>=1.8.0,<2",
     "tables",
+    "statsmodels",
+    "plotnine",
+    "stargazer",
+    "dowhy",
+    "wrds",
+    "beautifulsoup4",
+    "requests",
+    "newsapi-python",
+    "lxml",
 ]
 
 [tool.uv]
