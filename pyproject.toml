@@ -20,6 +20,9 @@ dependencies = [
     "networkx>=3.2.1,<4",
     "seaborn>=0.13.2,<0.14",
     "poetry-plugin-export>=1.8.0,<2",
+    "cryptography>=46.0.7",
+    "Pygments>=2.20.0",
+    "poetry>=2.3.3",
     "tables",
     "statsmodels",
     "plotnine",
@@ -27,7 +30,7 @@ dependencies = [
     "dowhy",
     "wrds",
     "beautifulsoup4",
-    "requests",
+    "requests>=2.33.0",
     "newsapi-python",
     "lxml",
 ]
