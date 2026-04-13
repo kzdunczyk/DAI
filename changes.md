@@ -112,7 +112,7 @@ All notebooks were executed end-to-end and the following runtime errors were fou
 | `lectures/03c_supervised_learning.ipynb` | ✓ |
 | `lectures/04_unsupervised_learning.ipynb` | ✓ |
 | `lectures/05a_deep_learning.ipynb` | ✓ |
-| `lectures/05b_deep_learning.ipynb` | ⏳ pending GPU (CPU training too slow locally) |
+| `lectures/05b_deep_learning.ipynb` | ✓ |
 | `lectures/intros/001_Intro_to_jupyter.ipynb` | ✓ |
 | `lectures/intros/002_Intro_to_python.ipynb` | ✓ |
 | `lectures/intros/003_Intro_to_pandas.ipynb` | ✓ |
@@ -121,3 +121,45 @@ All notebooks were executed end-to-end and the following runtime errors were fou
 | `lectures/intros/006_Intro_to_scipy.ipynb` | — (requires WRDS login) |
 | `lectures/intros/007_Intro_to_web_scraping.ipynb` | — (requires NewsAPI key) |
 | `lectures/intros/008_3D_yield_curve.ipynb` | ✓ |
+| `exercises/02_CausalInference_students version.ipynb` | ✓ |
+| `exercises/02_CausalInference_solution.ipynb` | ✓ |
+| `exercises/03a_supervised_learning_students version.ipynb` | ✓ |
+| `exercises/03b_supervised_learning_students version.ipynb` | ✓ |
+| `exercises/03c_supervised_learning_students version.ipynb` | ✓ |
+| `exercises/04_unsupervised_learning_students version.ipynb` | ✓ |
+| `exercises/05a_deep_learning_students version.ipynb` | ✓ |
+| `exercises/05b_deep_learning_students version.ipynb` | ✓ |
+
+---
+
+## Exercise Notebook Fixes
+
+### `exercises/02_CausalInference_students version.ipynb` and `solution.ipynb`
+- **Missing dependency** — `openpyxl` not installed; required by pandas to read `.xlsx` files. Added `openpyxl>=3.1.0,<4` to `pyproject.toml`. Regenerated `requirements.txt`.
+
+### `exercises/03b_supervised_learning_students version.ipynb`
+- **Missing import** — `pandas` was never imported. The `prep_data(df: pd.DataFrame)` function definition failed with `NameError: name 'pd' is not defined`. Added `import pandas as pd` to the imports cell.
+
+### `exercises/05a_deep_learning_students version.ipynb`
+- Replaced `!pip install keras` / `!pip install tensorflow` with the standard `requirements.txt` install.
+- Added `os.environ["KERAS_BACKEND"] = "tensorflow"` before keras imports.
+- Fixed `from tensorflow.keras import layers, Model` → `from keras import layers, Model`.
+
+### `exercises/05b_deep_learning_students version.ipynb`
+- **Student template** — filled in all exercise blanks (`___`) to produce an executable notebook.
+- Fixed hardcoded `os.chdir('/home/jovyan/work/DAI')` with dynamic path detection (works locally and on Colab).
+- Fixed `from tensorflow import keras` / `from tensorflow.keras import` → `from keras import` (Keras 3).
+- Fixed `keras.backend.exp` → `keras.ops.exp` (Keras 3 removed `keras.backend` functional API).
+- Reduced GAN iterations from 10 000 to 200 and VAE epochs from 50 to 2 for CPU execution; comments note how to increase for GPU runs.
+
+---
+
+## GPU / CUDA Status
+
+Local machine has an NVIDIA RTX A4000 with CUDA driver 13.0 installed. TensorFlow 2.21 requires **CUDA 12.5** (`libcudart.so.12`) and **cuDNN 9** — neither present.
+
+**Sysadmin action needed to enable GPU training locally:**
+```
+sudo dnf install cuda-toolkit-12-5 libcudnn9-cuda-12
+```
+Or install CUDA 12.5 alongside the existing CUDA 13 install and set `LD_LIBRARY_PATH` accordingly. Until then, all notebooks run on CPU with reduced epoch counts.

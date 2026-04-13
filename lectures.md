@@ -3,7 +3,6 @@
 Please familiarize yourself with the following topics we discussed in more detail in Financial Econometrics for this lecture.
 Also see the notes on the [readme](README.md) and the [literature](literature.md) for more information.
 
-
 [Jupyter](lectures/intros/001_Intro_to_jupyter.ipynb)
 
 [Python](lectures/intros/002_Intro_to_python.ipynb)
@@ -31,8 +30,6 @@ Also see the notes on the [readme](README.md) and the [literature](literature.md
 # 2. Causal Inference
 [Causal Inference](https://colab.research.google.com/github/firrm/DAI/blob/main/lectures/02_CausalInference.ipynb)
 
-[Exercise](https://colab.research.google.com/github/firrm/DAI/blob/main/exercises/02_CausalInference_students%20version.ipynb)
-
 # 3. Supervised Learning
 [Supervised Learning](https://colab.research.google.com/github/firrm/DAI/blob/main/lectures/03a_supervised_learning.ipynb)
 
@@ -40,16 +37,9 @@ Also see the notes on the [readme](README.md) and the [literature](literature.md
 
 [Supervised Learning III](https://colab.research.google.com/github/firrm/DAI/blob/main/lectures/03c_supervised_learning.ipynb)
 
-[Exercise I](https://colab.research.google.com/github/firrm/DAI/blob/main/exercises/03a_supervised_learning_students%20version.ipynb)
-
-[Exercise II](https://colab.research.google.com/github/firrm/DAI/blob/main/exercises/03b_supervised_learning_students%20version.ipynb)
-
-[Exercise III](https://colab.research.google.com/github/firrm/DAI/blob/main/exercises/03c_supervised_learning_students%20version.ipynb)
 
 # 4. Unsupervised Learning
 [Unsupervised Learning](https://colab.research.google.com/github/firrm/DAI/blob/main/lectures/04_unsupervised_learning.ipynb)
-
-[Exercise](https://colab.research.google.com/github/firrm/DAI/blob/main/exercises/04_unsupervised_learning_students%20version.ipynb)
 
 # 5. Deep Learning
 
@@ -57,9 +47,6 @@ Also see the notes on the [readme](README.md) and the [literature](literature.md
 
 [Deep Learning II](https://colab.research.google.com/github/firrm/DAI/blob/main/lectures/05b_deep_learning.ipynb)
 
-[Exercise I](https://colab.research.google.com/github/firrm/DAI/blob/main/exercises/05a_deep_learning_students%20version.ipynb)
-
-[Exercise II](https://colab.research.google.com/github/firrm/DAI/blob/main/exercises/05b_deep_learning_students%20version.ipynb)
 
 # Mission
 

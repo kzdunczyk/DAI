@@ -342,3 +342,9 @@ cython_debug/
 #.idea/
 
 /lectures/.ipynb_checkpoints/
+
+# Generated training artifacts
+*.h5
+*.weights.h5
+exercises/decision_tree.dot
+exercises/cache/
