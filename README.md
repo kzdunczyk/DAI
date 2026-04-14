@@ -15,6 +15,28 @@ Welcome to [our](https://www.finance.wiwi.tu-dortmund.de) lecture repo for the c
 As a student you are elegible to use the Github Student program including Copilot, I suggest you sign up for it [here](https://education.github.com/benefits?type=student).
 
 
+# Quick start with Docker (recommended)
+
+The easiest way to run all notebooks locally — no Python installation or cloning required.
+
+**Prerequisites:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Windows / macOS / Linux).
+
+```bash
+# 1. Download the compose file (one-time)
+curl -O https://raw.githubusercontent.com/firrm/DAI/main/docker-compose.yml
+
+# 2. Start JupyterLab (pulls the image automatically on first run)
+docker compose up
+```
+
+Then open **http://localhost:8888** in your browser.
+
+All course materials (lectures, exercises, data) are available inside the notebook file browser.
+Your own files saved in the **`work/`** folder persist between sessions via the `./my-work` volume on your machine.
+
+> **Note:** The deep-learning notebooks `05a_deep_learning` and `05b_deep_learning` require
+> TensorFlow/Keras and will not run in this image. Use the local setup below for those.
+
 # Local environment setup (optional)
 Since we will put everything on our server, you will **not** need to do this. However, if you want to work on your local machine, you will need to do the following:
 
